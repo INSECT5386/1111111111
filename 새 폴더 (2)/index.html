@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="INSECT 검색 엔진">
+    <meta property="og:title" content="INSECT">
+    <meta property="og:description" content="INSECT 검색 엔진">
+    <title>INSECT 검색 엔진</title>
+    
+    <!-- 매니페스트 파일 링크 -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- CSS 링크 -->
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>INSECT 검색 엔진</h1>
+    </header>
+
+    <!-- 콘텐츠 영역 -->
+    <main>
+        <p>여기에 콘텐츠가 들어갑니다.</p>
+    </main>
+    
+    <!-- 서비스 워커 등록 -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then((registration) => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch((error) => {
+                    console.log('Service Worker registration failed:', error);
+                });
+        }
+    </script>
+    <script src="/script.js"></script>
+</body>
+</html>
